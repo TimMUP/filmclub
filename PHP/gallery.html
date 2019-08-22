@@ -78,7 +78,7 @@
 						$(".loaded").fadeOut();
 					},2000);
     			}, 3000);
-				clearTimeout(timeout);
+				//clearTimeout(timeout);
 							}
 		});
 	</script><!--loading screen-->
@@ -130,70 +130,40 @@
 	</script><!--nav hide-->
 	<script type="text/javascript">
 		$(document).ready(function(){
-			var controller = new ScrollMagic.Controller();
-			new ScrollMagic.Scene({
-				triggerElement: ".event",
-				triggerHook: 0.9,
-				duration: "80%",
-				offset:50
-			})
-			.setClassToggle(".event", "visible")
-			.addTo(controller);
-		});
-	</script><!--scroll reveal-->
-	<script type="text/javascript">
-		$(document).ready(function(){
 			$(".event").each(function(){
 				var margin = $(this).find(".left-cont").height()/2;//-$( window ).width()/100;
 				//var margin2 = $(this).find(".left-cont").height()/2-$( window ).width()/200;
-				console.log(margin);
 				$(this).find(".middle").css("margin-bottom", margin.toString()+"px");
 				$(this).find(".left-arrow").css("margin-bottom", margin.toString()+"px");
 				$(this).find(".right-arrow").css("margin-bottom", margin.toString()+"px");		
 			});
 			$(window).resize(function(){
-				var margin1 = $(this).find(".left-cont").height()/2;//-$( window ).width()/100;
-				console.log(margin1);
+				$(".event").each(function(){
+				var margin = $(this).find(".left-cont").height()/2;//-$( window ).width()/100;
 				//var margin2 = $(this).find(".left-cont").height()/2-$( window ).width()/200;
 				$(this).find(".middle").css("margin-bottom", margin.toString()+"px");
 				$(this).find(".left-arrow").css("margin-bottom", margin.toString()+"px");
 				$(this).find(".right-arrow").css("margin-bottom", margin.toString()+"px");		
+				});
 			});
-		});
+		});	
 	</script><!--add margin for timeline-->
 	<script type="text/javascript">
 		$(document).ready(function(){
-			console.log("loaded");
+			//console.log("loaded");
 			$(window).scroll(function(){
-				console.log("scroll");
-				console.log($(".unseen").offset().top);
-				console.log($(window).scrollTop());
-				console.log($(window).height());
+				//console.log("scroll");
+				//console.log($(".unseen").offset().top);
+				//console.log($(window).scrollTop());
+				//console.log($(window).height());
 				if($(".unseen").offset().top-$(window).scrollTop() < 0.9*$(window).height()){
-					console.log("seen");
+					//console.log("seen");
 					$(".unseen").first().removeClass("unseen").addClass("seen");
 				}
 				
 			});
 		});
 	</script><!--timeline appear-->
-	<script type="text/javascript">
-		var tag = document.createElement('script');
-  		tag.id = 'player1';
-  		tag.src = 'https://www.youtube.com/iframe_api';
- 		 var firstScriptTag = document.getElementsByTagName('script')[0];
-  		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-	  var player1;
-	  function onYouTubeIframeAPIReady() {
-		player1 = new YT.Player('player1', {
-			events: {
-			  'onReady': onPlayerReady,
-			  'onStateChange': onPlayerStateChange
-			}
-		});
-	  }
-	</script>
 </head>
 
 <body>
@@ -237,16 +207,16 @@
 	<div class="cover">
 		<h1>TIMELINE</h1>
 		<div class="timeline">
-			<div class="event unseen" data-playerid = "player1">
+			<div class="event unseen" data-playerid = "1">
 				<div class="left-cont" style="height: 17.5vw">
-					<iframe width="100%" height="100%" id="player1" src="https://www.youtube.com/embed/f0iujV_ziGY?autoplay=1&cc_load_policy=1&controls=0&disablekb=1&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%" height="100%" class="YTPlayer" id="player1" src="https://www.youtube.com/embed/f0iujV_ziGY?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 				</div>
 				<div class="left-arrow"></div>
 				<div class="middle"></div>
-				<div class="right-arrow"></div>
-				<div class="right-cont"></div>
+				<div class="right-arrow useless"></div>
+				<div class="right-cont useless"></div>
 			</div>
-			<div class="event unseen">
+			<!--<div class="event unseen">
 				<div class="left-cont"></div>
 				<div class="left-arrow"></div>
 				<div class="middle"></div>
@@ -273,9 +243,62 @@
 				<div class="middle"></div>
 				<div class="right-arrow"></div>
 				<div class="right-cont"></div>
-			</div>
+			</div>-->
 		</div>
 	</div>
 
+<script type="text/javascript">
+		var playerCount = $(".YTPlayer").length;
+		var currentPlayerCount;
+		//console.log(playerCount);
+		var player = [];
+		function onPlayerReady(event) {
+        	console.log(player[1].getPlayerState());
+      	}
+		function onPlayerStateChange(event) {
+			console.log("state changed");
+        	//console.log(player[1].getPlayerState());
+		}
+		for(i = 1; i <= playerCount; i++){
+			currentPlayerCount = i;
+			var tag = document.createElement('script');
+			tag.id = 'player' + currentPlayerCount.toString();
+			tag.src = 'https://www.youtube.com/iframe_api';
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+			function onYouTubeIframeAPIReady() {
+				console.log("api ready");
+				//console.log(currentPlayerCount);
+				player[currentPlayerCount] = new YT.Player('player' + currentPlayerCount.toString(), {
+					/*videoId: 'f0iujV_ziGY',
+					controls: 0,
+					disablekb: 1,
+					enablejsapi: 1,
+					loop: 1,
+					modestbranding: 1,
+					cc_load_policy: 1,*/
+					events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+					}
+				});
+			}
+		}
+		
+		/*$(window).scroll(function(){
+			console.log(player[1].getPlayerState());
+			var sTop = $(window).scrollTop();
+			var h1 = sTop + $(window).height()*0.05;
+			var h2 = sTop + $(window).height();
+			$(".event").each(function(){
+				var sThis = $(this).offset().top;
+				if( sThis < h1 || sThis > h2-$(this).height()){
+					//outside viewport
+					console.log(player[1].getPlayerState());
+					player[$(this).data("playerid")].pauseVideo();
+				}
+			});
+		});*/
+</script>
 </body>
 </html>
