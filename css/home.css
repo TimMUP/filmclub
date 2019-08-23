@@ -87,17 +87,19 @@ body{
 	font-family: 'OpenSans',sans-serif;
 	font-weight: 800;
 	font-size: 2vw;
+	width: 40vw;
 	color: #fff;
 	text-shadow: 0 0 10px #000;
 	display: block;
 	position: absolute;	
+	text-align: left;
 }
 .titbr{
-    bottom: 20.5vh;
+    top: 70vh;
     right: 5vw;
 }
 .titbl{
-	bottom: 20.5vh;
+    top: 70vh;
 	left:5vw;
 }
 .tittl{
@@ -111,18 +113,20 @@ body{
 .subtitle{
 	font-family: 'OpenSans',sans-serif;
 	font-weight: 500;
+	width: 40vw;
 	font-size: 1.5vw;
 	color: #fff;
 	text-shadow: 0 0 10px #000;
 	display: block;
     position: absolute;
+	text-align: left;
 }
 .subbr{
-    bottom: 15vh;
+    top: 75.5vh;
     right: 5vw;
 }
 .subbl{
-	bottom: 15vh;
+    top: 75.5vh;
 	left:5vw;
 }
 .subtl{
