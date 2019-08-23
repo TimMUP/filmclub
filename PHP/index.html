@@ -81,6 +81,13 @@
 			};
 		});
 	</script><!--nav bar hide and display timer-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log("loaded");
+			$("#nav-pic").css("transition","0.3s");
+			$("#nav-ttl").css("transition","0.3s");
+		});
+	</script><!--nav transition after load-->
 
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -161,6 +168,10 @@
 		});
 		  $(".swiper-slide").css("opcaity","auto");
 		  $(".gallery-thumbs").css("opcaity","auto");
+		  mySwiper.autoplay.stop();
+		  setTimeout(function(){
+			  mySwiper.autoplay.start();
+		  },4000);
 	  });
 	</script><!--Slides-->
 	<script type="text/javascript">
@@ -246,8 +257,8 @@
 	</div>
 	<div class="menu">
 		<a id="nav-logo" href="index.html">
-			<img src="../resources/img/empty-logo.png"> 
-			<h1>WOSS FILM CLUB</h1>
+			<img id="nav-pic" src="../resources/img/empty-logo.png"> 
+			<h1 id="nav-ttl" >WOSS FILM CLUB</h1>
 		</a>
 		<div id = "barcontcont"></div>
 			<div class="container" onClick="myFunction(this)">
@@ -270,9 +281,9 @@
 		<!-- Additional required wrapper -->
 		<div class="swiper-wrapper">
 			<!-- Slides -->
-			<div class="swiper-slide slide" style="background-image: url(../resources/img/IMG_0001.png)">
-				<div class="title" data-swiper-parallax="-300">White Oaks Film and Design Club</div><br>
-				<div class="subtitle" data-swiper-parallax="-100" style="bottom: 40vh; width:auto">Gathering place for White Oaks's thinkers, designers, and creators</div>
+			<div class="swiper-slide slide" style="background-image: url(../resources/img/IMG_20180819_115118[1].png)">
+				<div class="title tittr" data-swiper-parallax="-300">White Oaks Film and Design Club</div><br>
+				<div class="subtitle subtr" data-swiper-parallax="-100">Gathering place for White Oaks's thinkers, designers, and creators</div>
 			</div>
 			<div class="swiper-slide slide" style="background-image: url(../resources/img/IMG_0008.jpg)">
 				<div class="title titbr" data-swiper-parallax="-300">Film Making</div><br>
@@ -286,7 +297,7 @@
 				<div class="title tittr" data-swiper-parallax="-300">Weekly Lessones and Projects</div><br>
 				<div class="subtitle subtr" data-swiper-parallax="-100">Weekly custom lessons and unique challenges and projects</div>
 			</div>
-			<div class="swiper-slide slide" style="background-image: url(../resources/img/Untitled-1.jpg)">
+			<div class="swiper-slide slide" style="background-image: url(../resources/img/49371152.jpg)">
 				<div class="title titbr" data-swiper-parallax="-300">Digital Art/Design</div><br>
 				<div class="subtitle subbr" data-swiper-parallax="-100">Explore the uses of Illustrator and design logos for personal or commercial use</div>
 			</div>
@@ -294,8 +305,8 @@
 				<div class="title tittl" data-swiper-parallax="-300">Creative Volunteering Oppertunities</div><br>
 				<div class="subtitle subtl" data-swiper-parallax="-100">Extensive volunteering opportunities doing what you love the most with large established organizations</div>
 			</div>
-			<div class="swiper-slide slide" style="background-image: url(../resources/img/71492160_p0.jpg)">
-				<div class="title" data-swiper-parallax="-300" style="text-align: center"><a target="_blank" href="signup.html">Sign Up NOW</a></div><br>
+			<div class="swiper-slide slide" style="background-image: url(../resources/img/Untitled-1.jpg)">
+				<div class="title" data-swiper-parallax="-300" style="text-align: center"><a target="_blank" href="signup.html">Sign Up Now</a></div><br>
 				<!--<div class="subtitle subtl" data-swiper-parallax="-100"><a href="signup.html">Click here to sign up</a></div>-->
 			</div>
 			
@@ -313,13 +324,13 @@
 	</div>
 	<div class="swiper-container gallery-thumbs">
     	<div class="swiper-wrapper">
-    	  <div class="swiper-slide thumb" style="background-image: url(../resources/img/IMG_0001.png)"></div>
+    	  <div class="swiper-slide thumb" style="background-image: url(../resources/img/IMG_20180819_115118[1].png)"></div>
      	 <div class="swiper-slide thumb" style="background-image: url(../resources/img/IMG_0008.jpg)"></div>
     	  <div class="swiper-slide thumb" style="background-image: url(../resources/img/IMG_0061.jpg)"></div>
     	  <div class="swiper-slide thumb" style="background-image: url(../resources/img/IMG_20180819_142021[1].jpg)"></div>
-    	  <div class="swiper-slide thumb" style="background-image: url(../resources/img/Untitled-1.jpg)"></div>
+    	  <div class="swiper-slide thumb" style="background-image: url(../resources/img/49371152.jpg)"></div>
     	  <div class="swiper-slide thumb" style="background-image: url(../resources/img/IMG_20190811_060940.jpg)"></div>
-    	  <div class="swiper-slide thumb" style="background-image: url(../resources/img/71492160_p0.jpg)"></div>
+    	  <div class="swiper-slide thumb" style="background-image: url(../resources/img/Untitled-1.jpg)"></div>
    	 </div>
 	</div>
 </body>
