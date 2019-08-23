@@ -20,6 +20,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
 	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log("loaded");
+			$("#nav-pic").css("transition","0.3s");
+			$("#nav-ttl").css("transition","0.3s");
+		});
+	</script><!--nav transition after load-->
+	<script type="text/javascript">
 	if ('scrollRestoration' in history) {
 	  history.scrollRestoration = 'manual';
 	}

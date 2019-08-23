@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WOSS Film Club</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="../resources/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../resources/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../resources/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="../resources/img/favicon/site.webmanifest">
+	<link rel="shortcut icon" href="../resources/img/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="../resources/img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<link href="../css/contact.css" rel="stylesheet" type="text/css">
+	<link href="../css/head.css" rel="stylesheet" type="text/css">
+	<link href="../css/loading.css" rel="stylesheet" type="text/css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log("loaded");
+			$("#nav-pic").css("transition","0.3s");
+			$("#nav-ttl").css("transition","0.3s");
+		});
+	</script><!--nav transition after load-->
+	<script type="text/javascript">
+		var count = 0;
+		function myFunction(x) {
+			x.classList.toggle("change");
+			$(".nav").fadeToggle();
+			$(".menu-hide").toggle();
+			count++;
+			if(count%2 == 0){
+				$(".container").animate({right:'0'});
+				$(".container").removeClass("afchange");
+				$(".container").removeClass("bfchange");
+			}
+			else{
+				$(".container").animate({right:'11vw'});
+				$(".container").removeClass("afchange");
+				$(".container").removeClass("bfchange");
+			}
+		}	
+	</script><!--menu button-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".container").mouseover(function(){
+				if(window.count%2 == 0){//menu is open
+					$(".container").addClass("bfchange");
+				}
+				else{//menu is not open
+					$(".container").addClass("afchange");
+				}
+			});
+			$(".container").mouseleave(function(){
+				if(window.count%2 == 0){//menu is open
+					$(".container").removeClass("bfchange");
+				}
+				else{//menu is not open
+					$(".container").removeClass("afchange");
+				}		  
+			});
+		});
+	</script><!--menu button hover-->
+</head>
+
+<body>
+	<div class="menu">
+		<a id="nav-logo" href="index.html">
+			<img id="nav-pic" src="../resources/img/empty-logo.png"> 
+			<h1 id="nav-ttl">WOSS FILM CLUB</h1>
+		</a>
+		<div id = "barcontcont"></div>
+			<div class="container" onClick="myFunction(this)">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+		
+		<ul class="nav">
+			<li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Timeline</a></li>
+            <li><a target="_blank" href="signup.html">SignUp</a></li>
+            <li><a href="contact.html">Contact</a></li>
+			
+		</ul>
+	</div>
+	<div class="background-image"></div>
+	<div class="left">
+		<h1>Lets Get In Touch</h1>
+		<div class="text">Find us here</div>
+		<div class="text">wossfilmclub@gmail.com</div>
+		<div class="social-media-cont">
+			<a><div class="social-media"></div></a>
+			<a><div class="social-media"></div></a>
+			<a><div class="social-media"></div></a>
+		</div>
+	</div>
+	<div class="right">
+		<form>
+			<input name="Name" type="text" id="inputName"/>
+			<input name="Email" type="text" id="inputEnail"/>
+			<input name="Message" type="text" id="inputMessage"/>
+			<button>Shoot it!</button>
+			<!--smtpjs.com , elasticemail.com-->
+		</form>
+	</div>
+</body>
+</html>
