@@ -24,6 +24,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
 	<script type="text/javascript">
+	if ('scrollRestoration' in history) {
+	  history.scrollRestoration = 'manual';
+	}
+	</script><!--turn off chrome scroll restoration-->
+	<script type="text/javascript">
 		var count = 0;
 		function myFunction(x) {
 			x.classList.toggle("change");
@@ -131,15 +136,19 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(".event").each(function(){
-				var margin = $(this).find(".left-cont").height()/2;//-$( window ).width()/100;
+				var marginl = $(this).find(".left-cont").height()/2;//-$( window ).width()/100;
+				var marginr = $(this).find(".right-cont").height()/2;//-$( window ).width()/100;
+				var margin = marginl + marginr;
 				//var margin2 = $(this).find(".left-cont").height()/2-$( window ).width()/200;
 				$(this).find(".middle").css("margin-bottom", margin.toString()+"px");
 				$(this).find(".left-arrow").css("margin-bottom", margin.toString()+"px");
-				$(this).find(".right-arrow").css("margin-bottom", margin.toString()+"px");		
+				$(this).find(".right-arrow").css("margin-bottom", margin.toString()+"px");	
 			});
 			$(window).resize(function(){
 				$(".event").each(function(){
-				var margin = $(this).find(".left-cont").height()/2;//-$( window ).width()/100;
+				var marginl = $(this).find(".left-cont").height()/2;//-$( window ).width()/100;
+				var marginr = $(this).find(".right-cont").height()/2;//-$( window ).width()/100;
+				var margin = marginl + marginr;
 				//var margin2 = $(this).find(".left-cont").height()/2-$( window ).width()/200;
 				$(this).find(".middle").css("margin-bottom", margin.toString()+"px");
 				$(this).find(".left-arrow").css("margin-bottom", margin.toString()+"px");
@@ -207,6 +216,7 @@
 	<div class="cover">
 		<h1>TIMELINE</h1>
 		<div class="timeline">
+			<div class="timeStamp unseen" style="margin-top: 0">2018</div>
 			<div class="event unseen" data-playerid = "1">
 				<div class="left-cont" style="height: 17.5vw">
 					<iframe width="100%" height="100%" class="YTPlayer" id="player1" src="https://www.youtube.com/embed/f0iujV_ziGY?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
@@ -216,28 +226,36 @@
 				<div class="right-arrow useless"></div>
 				<div class="right-cont useless"></div>
 			</div>
+			<div class="event unseen" data-playerid = "2">
+				<div class="left-cont useless"></div>
+				<div class="left-arrow useless"></div>
+				<div class="middle"></div>
+				<div class="right-arrow"></div>
+				<div class="right-cont" style="height: 17.5vw">
+				<iframe width="100%" height="100%" class="YTPlayer" id="player2" src="https://www.youtube.com/embed/6UDk1Ur-JSA?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0"  allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="timeStamp unseen">2019</div>
+			<div class="event unseen" data-playerid = "3">
+				<div class="left-cont" style="height: 17.5vw">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player3" src="https://www.youtube.com/embed/sfW_xg_35Eo?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="left-arrow"></div>
+				<div class="middle"></div>
+				<div class="right-arrow useless"></div>
+				<div class="right-cont useless"></div>
+			</div>
+			<div class="event unseen" data-playerid = "4">
+				<div class="left-cont useless"></div>
+				<div class="left-arrow useless "></div>
+				<div class="middle"></div>
+				<div class="right-arrow"></div>
+				<div class="right-cont" style="height: 17.5vw">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player4" src="https://www.youtube.com/embed/1ItT0mxOtnk?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="timeStamp unseen" style="margin-bottom: -5vh">NOW</div>
 			<!--<div class="event unseen">
-				<div class="left-cont"></div>
-				<div class="left-arrow"></div>
-				<div class="middle"></div>
-				<div class="right-arrow"></div>
-				<div class="right-cont"></div>
-			</div>
-			<div class="event unseen">
-				<div class="left-cont"></div>
-				<div class="left-arrow"></div>
-				<div class="middle"></div>
-				<div class="right-arrow"></div>
-				<div class="right-cont"></div>
-			</div>
-			<div class="event unseen">
-				<div class="left-cont"></div>
-				<div class="left-arrow"></div>
-				<div class="middle"></div>
-				<div class="right-arrow"></div>
-				<div class="right-cont"></div>
-			</div>
-			<div class="event unseen">
 				<div class="left-cont"></div>
 				<div class="left-arrow"></div>
 				<div class="middle"></div>
