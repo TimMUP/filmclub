@@ -83,3 +83,61 @@ body{
 	opacity:1;
 	transform: scale(1.1,1.1);
 }
+.title{
+	font-family: 'OpenSans',sans-serif;
+	font-weight: 800;
+	font-size: 2vw;
+	color: #fff;
+	text-shadow: 0 0 10px #000;
+	display: block;
+	position: absolute;	
+}
+.titbr{
+    bottom: 20.5vh;
+    right: 5vw;
+}
+.titbl{
+	bottom: 20.5vh;
+	left:5vw;
+}
+.tittl{
+	top: 15vh;
+	left:5vw;
+}
+.tittr{
+	top: 15vh;
+	right:5vw;
+}
+.subtitle{
+	font-family: 'OpenSans',sans-serif;
+	font-weight: 500;
+	font-size: 1.5vw;
+	color: #fff;
+	text-shadow: 0 0 10px #000;
+	display: block;
+    position: absolute;
+}
+.subbr{
+    bottom: 15vh;
+    right: 5vw;
+}
+.subbl{
+	bottom: 15vh;
+	left:5vw;
+}
+.subtl{
+	top: 20.5vh;
+	left:5vw;
+}
+.subtr{
+	top: 20.5vh;
+	right:5vw;
+}
+a{
+	font-family: 'OpenSans',sans-serif;
+	font-weight: inherit;
+	font-size: inherit;
+	color: inherit;
+	text-shadow: inherit;
+	text-decoration: none;
+}
