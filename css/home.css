@@ -87,12 +87,10 @@ body{
 	font-family: 'OpenSans',sans-serif;
 	font-weight: 800;
 	font-size: 2vw;
-	width: 40vw;
 	color: #fff;
 	text-shadow: 0 0 10px #000;
 	display: block;
 	position: absolute;	
-	text-align: left;
 }
 .titbr{
     top: 70vh;
@@ -113,13 +111,11 @@ body{
 .subtitle{
 	font-family: 'OpenSans',sans-serif;
 	font-weight: 500;
-	width: 40vw;
 	font-size: 1.5vw;
 	color: #fff;
 	text-shadow: 0 0 10px #000;
 	display: block;
     position: absolute;
-	text-align: left;
 }
 .subbr{
     top: 75.5vh;
