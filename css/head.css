@@ -211,8 +211,8 @@ li:hover{
 	.menu > ul > a > li{
 		height:5vh;
 		line-height: 5vh;
-		font-size: 1em;
-		padding: 0.2em 1em;
+		font-size: 3em;
+		padding: 0.6em 3em;
 		text-decoration: none;
 	}
 }
