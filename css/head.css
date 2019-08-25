@@ -96,11 +96,10 @@
 .bar1, .bar2, .bar3 {
 	width: 2.5vw;
 	height: 0.25vw;
-	background-color: #333;
+	background-color: #fff;
 	margin: 0.5vw 0;
 	transition: 0.4s;
 	border-radius: 0.5vw;
-	background-color: white;
 	z-index: inherit;
 }
 .bfchange .bar1{
@@ -145,4 +144,75 @@
 }
 li:hover{
 	cursor: pointer;
+}
+
+@media only screen and (max-width: 768px){
+	.menu{
+		height: 5%;
+	}
+	#nav-logo{
+		height:100%;
+	}
+	#nav-logo > img{
+		height:3vh;
+		width:auto;
+		margin:1vh;
+	}
+	#nav-logo > h1{
+		display: none;
+	}
+	.bar1, .bar2, .bar3 {
+		width: 4vh;
+		height: 0.4vh;
+		background-color: #fff;
+		margin: 0.8vh 0;
+		transition: 0.4s;
+		border-radius: 0.5vw;
+		z-index: inherit;
+	}
+	#barcontcont > .container{
+		margin:0.3vh;
+		right:0;
+	}
+	.bfchange .bar1{
+		-webkit-transform: rotate(0) ;
+		transform: rotate(0);
+	}
+	.change .bar1 {
+		-webkit-transform: translateY(1.2vh) rotate(-45deg) ;
+		transform: translateY(1.2vh) rotate(-45deg);
+	}
+	.afchange .bar1{
+		-webkit-transform: translateY(1.2vh) rotate(-45deg) ;
+		transform: translateY(1.2vh) rotate(-45deg);	
+	}
+	.change .bar2 {
+		opacity: 0;
+	}
+	.afchange .bar2{
+		opacity:0;
+	}
+	.bfchange .bar3{
+		-webkit-transform: rotate(0deg) ;
+		transform: rotate(0deg);
+	}
+	.change .bar3 {
+		-webkit-transform: translateY(-1.2vh) rotate(45deg);
+		transform: translateY(-1.2vh) rotate(45deg);
+	}
+	.afchange .bar3{
+		-webkit-transform: translateY(-1.2vh) rotate(45deg) ;
+		transform: translateY(-1.2vh) rotate(45deg);
+	}
+	.menu > ul{
+		top:5vh;
+		width:auto;
+	}
+	.menu > ul > a > li{
+		height:5vh;
+		line-height: 5vh;
+		font-size: 1em;
+		padding: 0.2em 1em;
+		text-decoration: none;
+	}
 }

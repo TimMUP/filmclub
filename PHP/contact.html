@@ -40,7 +40,9 @@
 				$(".container").removeClass("bfchange");
 			}
 			else{
-				$(".container").animate({right:'11vw'});
+				if($(window).width()>768){
+					$(".container").animate({right:'11vw'});
+				}
 				$(".container").removeClass("afchange");
 				$(".container").removeClass("bfchange");
 			}

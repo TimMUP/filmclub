@@ -8,6 +8,7 @@
 	text-align: center;
 	padding: 10% 0;
 	top:0;
+	display:none;
 }
 #loading-background {
 	width:100%;

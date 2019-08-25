@@ -52,7 +52,7 @@
 			});	
 		});
 	</script><!--nav bar hide and display clicker-->
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		var navState = true;
 		var timeout;
 		var disableTimer = false;
@@ -208,7 +208,9 @@
 				$(".container").removeClass("bfchange");
 			}
 			else{
-				$(".container").animate({right:'11vw'});
+				if($(window).width()>768){
+					$(".container").animate({right:'11vw'});
+				}
 				$(".container").removeClass("afchange");
 				$(".container").removeClass("bfchange");
 			}
@@ -258,7 +260,7 @@
 	</div>
 	<div class="menu">
 		<a id="nav-logo" href="index.html">
-			<img id="nav-pic" src="../resources/img/empty-logo.png"> 
+			<img id="nav-pic" src="resources/img/empty-logo.png"> 
 			<h1 id="nav-ttl">WOSS FILM CLUB</h1>
 		</a>
 		<div id = "barcontcont"></div>
