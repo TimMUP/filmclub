@@ -84,7 +84,7 @@ body{
 	transform: scale(1.1,1.1);
 }
 .title{
-	font-family: 'OpenSans',sans-serif;
+	font-family: 'product_sans',sans-serif;
 	font-weight: 800;
 	font-size: 2vw;
 	color: #fff;
@@ -109,7 +109,7 @@ body{
 	right:5vw;
 }
 .subtitle{
-	font-family: 'OpenSans',sans-serif;
+	font-family: 'product_sans',sans-serif;
 	font-weight: 500;
 	font-size: 1.5vw;
 	color: #fff;
@@ -134,7 +134,7 @@ body{
 	right:5vw;
 }
 a{
-	font-family: 'OpenSans',sans-serif;
+	font-family: 'product_sans',sans-serif;
 	font-weight: inherit;
 	font-size: inherit;
 	color: inherit;

@@ -14,9 +14,11 @@
 	<link href="../css/contact.css" rel="stylesheet" type="text/css">
 	<link href="../css/head.css" rel="stylesheet" type="text/css">
 	<link href="../css/loading.css" rel="stylesheet" type="text/css">
+	<link href="../resources/font-kit/stylesheet.css" rel="stylesheet" type="text/css">
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -64,6 +66,42 @@
 			});
 		});
 	</script><!--menu button hover-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#formbtn").click(function(){
+				var name = $("#inputName").val();
+				var email = $("#inputEmail").val();
+				var message = $("#inputMessage").val();
+				//$("#inputName").val("");
+				//$("#inputEmail").val("");
+				//$("#inputMessage").val("");
+				
+				Email.send("chaihaolin2002@gmail.com",
+					"chaihaolin2002@gmail.com",
+					"subject of the mail",
+					"Body of the mail",
+					"smtp.gmail.com",
+					"chaihaolin2002@gmail.com",
+					"20020624");
+
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#formbtn").click(function(){
+				$(".thankyou_message").fadeIn();
+			});
+			$(".thankyou_message").click(function(){
+				if($(".thankyou_message").is(":visible")){
+					$(".thankyou_message").fadeOut();
+					$("#inputName").val("");
+					$("#inputEmail").val("");
+					$("#inputMessage").val("");
+				}
+			});
+		});
+	</script>
 </head>
 
 <body>
@@ -91,19 +129,42 @@
 	<div class="background-image"></div>
 	<div class="left">
 		<h1>LETS GET IN TOUCH</h1>
-		<div class="text"><a target="_blank"  href="https://goo.gl/maps/PzfG37JsbatQ6rWU8">FIND US ON GOOGLE MAP</a></div>
-		<div class="text"><a href="mailto:wossfilmclub@gmail.com" target="_top">EMAIL US</a></div>
-		<div class="text"><a target="_blank" href="https://www.instagram.com/wossfilmclub/?hl=en">FALLOW US ON INSTAGRAM</a></div>
+		<div class="text">
+			<a target="_blank"  href="https://goo.gl/maps/PzfG37JsbatQ6rWU8">
+				<img src="../resources/img/icons/map.png">
+				<div class="social-media-text">FIND US ON GOOGLE MAP</div>
+			</a>
+		</div>
+		<div class="text">
+			<a href="mailto:wossfilmclub@gmail.com" target="_top">
+				<img src="../resources/img/icons/mail.png">
+				<div class="social-media-text">EMAIL US</div>
+			</a>
+		</div>
+		<div class="text">
+			<a target="_blank" href="https://www.instagram.com/wossfilmclub/?hl=en">
+				<img src="../resources/img/icons/insta.png">
+				<div class="social-media-text">FALLOW US ON INSTAGRAM</div>
+			</a>
+		</div>
 	</div>
 	<div class="right">
-		<form>
-			<h1 style="margin-bottom: 0" >TALK WITH US</h1>
-			<textarea  name="Name" type="text" class="input" id="inputName" placeholder="Name"></textarea>
-			<textarea  name="Email" type="text" class="input" id="inputEnail"  placeholder="Email"></textarea>
-			<textarea name="Message" type="text" class="input" id="inputMessage"  placeholder="Tell us about your project!"></textarea>
-			<button>SHOOT IT!</button>
-			<!--smtpjs.com , elasticemail.com-->
+		<form class="gform" method="POST" action="https://script.google.com/macros/s/AKfycbxFfYI35yI94qM3RkoR4tWA7ISqbQ3k3bN69ot8GQ/exec">
+			<h1 style="margin-bottom: 0" >COOPERATE WITH US</h1>
+			<textarea name="name" type="text" class="input" id="inputName" placeholder="Name"></textarea>
+			<textarea name="email" type="text" class="input" id="inputEmail"  placeholder="Email"></textarea>
+			<textarea name="message" type="text" class="input" id="inputMessage"  placeholder="Tell us about your project!"></textarea>
+			<input type="submit" value="SHOOT IT!" id="formbtn">
+			<div style="display:none" class="thankyou_message">
+				<div class="sub-blocker">
+					<!--<img src="../resources/img/icons/x.png">-->
+					<div>Thank you for your submission!<br>
+					<span style="color:#ccc; font-size: 0.5em;">Click anywhere to continue</span>
+					</div>
+				</div>
+			</div>
 		</form>
 	</div>
+	<script data-cfasync="false" type="text/javascript" src="../resources/script/form-submission-handler.js"></script>
 </body>
 </html>
