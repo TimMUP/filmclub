@@ -58,7 +58,7 @@
 	z-index: inherit;
 	/*background: rgba(255,255,255,0.40);*/
 }
-.menu > ul > li{
+.menu > ul > a > li{
 	display: block;
 	text-align: center;
 	background: rgba(0,0,0,0.40);
@@ -67,20 +67,15 @@
 	width: auto;
 	transform: scale(1,1);
 	transition: 1s;
+	font-family: 'product_sans',sans-serif;
 	z-index: inherit;
+	font-size: 1vw;
+	text-decoration: none;
+	color: #fff;
 }
-.menu > ul > li:hover{
+.menu > ul > a > li:hover{
 	transform: scale(1.1,1.1);
 	background: rgba(0,0,0,0.60);
-}
-.menu > ul > li > a{
-	width:15vw;
-	font-size: 1vw;
-	text-align: center;
-	font-family: 'product_sans',sans-serif;
-	color: #fff;
-	z-index: inherit;
-	text-decoration: none;
 }
 #barcontcont{	
     display: inline-block;
