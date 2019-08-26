@@ -180,6 +180,13 @@
 			});
 		});
 	</script><!--timeline appear-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log($(window).height());
+			console.log(window.innerHeight);
+			alert($(window).height()-window.innerHeight);
+		});
+	</script><!--test-->
 </head>
 
 <body>
@@ -211,14 +218,15 @@
 		</ul>
 	</div>
 	<div class="menu-hide"></div>
-	<div class="cover-text">
+	<strong><div class="cover-text">
 		<h1>WOSS FILM CLUB</h1>
 		<h2>OUR JOURNEY</h2>
 		<div class="arrow-cont">
 			<div class="arrow"><div class="arrow-shape"></div></div><br>
 			<div class="arrow"><div class="arrow-shape"></div></div>
 		</div>
-	</div>
+	</div></strong>
+	
 	
 	<div class="cover">
 		<h1>TIMELINE</h1>
@@ -262,17 +270,17 @@
 				</div>
 			</div>
 			<div class="timeStamp unseen" style="margin-bottom: -5vh">NOW</div>
-			<!--<div class="event unseen">
+			<div class="event unseen">
 				<div class="left-cont"></div>
 				<div class="left-arrow"></div>
 				<div class="middle"></div>
 				<div class="right-arrow"></div>
 				<div class="right-cont"></div>
-			</div>-->
+			</div>
 		</div>
 	</div>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 		var playerCount = $(".YTPlayer").length;
 		var currentPlayerCount;
 		//console.log(playerCount);
