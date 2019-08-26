@@ -151,8 +151,7 @@ a{
 		bottom:0;
 		width:100%;
 		height:10%;
-		opacity:0;
-		z-index: -90;
+		background: #000;
 	}
 	.idle{
 		height:100%;

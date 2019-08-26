@@ -27,7 +27,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(".slide").click(function(){
-				if(window.navState){
+				if(window.navState&&window.onlyClicker==false){
 					//nav is not hidden
 					window.disableTimer = true;
 					$(".menu:visible").fadeOut();
@@ -70,6 +70,9 @@
 					$("#prev").fadeIn();
 					$("#next").fadeIn();
 					console.log("time in");
+					setTimeout(function(){
+						onlyClicker=false;
+					},2000);
 				}
 				clearTimeout(timeout);
 				timeout = setTimeout(function(){
@@ -82,6 +85,7 @@
 					$("#prev").fadeOut();
 					$("#next").fadeOut();
 					console.log("time out");
+					onlyClicker=true;
 					}
 				},5000);
 			};
@@ -192,16 +196,23 @@
 	</script><!--Slides-->
 	<script type="text/javascript">
 		$(document).ready(function(){
+			var top="6vw";
+			var bottom="3vw";
+			if($("#test").css('display')=='none'){
+				top = "6vh";
+				bottom = "11vh";
+				console.log("mobile");
+			}
 			$(".swiper-button-prev").css({
 				"left":"50%",
-				"top":"6vw",
+				"top":top,
 				"margin-top":"0",	
 				"transform":"rotate(90deg)",
 				"z-index":"10",
 			});
 			$(".swiper-button-next").css({
 				"left":"50%",
-				"bottom":"3vw",
+				"bottom":bottom,
 				"top":"auto",
 				"margin-top":"0",
 				"transform":"rotate(90deg)",
@@ -209,6 +220,20 @@
 			});
 		});
 	</script><!--arrow css-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			if($("#test").css('display')=='none'){
+				$(".thumb[data-swiper-slide-index='3'").css("background-image","url(resources/img/MS/MS_1.jpg)");
+				$(".thumb[data-swiper-slide-index='4'").css("background-image","url(resources/img/MS/MS_2.jpg)");
+				$(".thumb[data-swiper-slide-index='5'").css("background-image","url(resources/img/MS/MS_3.jpg)");
+				$(".thumb[data-swiper-slide-index='6'").css("background-image","url(resources/img/MS/MS_4.jpg)");
+				$(".thumb[data-swiper-slide-index='0'").css("background-image","url(resources/img/MS/MS_5.jpg)");
+				$(".thumb[data-swiper-slide-index='1'").css("background-image","url(resources/img/MS/MS_6.jpg)");
+				$(".thumb[data-swiper-slide-index='2'").css("background-image","url(resources/img/MS/MS_7.jpg)");
+				
+			}
+		});
+	</script><!--mobile thumb bug fix-->
 	
 	<script type="text/javascript">
 		var count = 0;
@@ -226,7 +251,6 @@
 				//console.log($(window).width());
 				if($("#test").css('display')!='none'){
 					$(".container").animate({right:'11vw'});
-					alert("this is pc");
 				}
 				$(".container").removeClass("afchange");
 				$(".container").removeClass("bfchange");
@@ -256,22 +280,10 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(".menu-hide").click(function(){
-				console.log("clicked");
 				myFunction();
 			});
 		});
 	</script><!--menu hide from click of page-->
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$(".menu-hide").click(function(){
-				$(".nav:visible").fadeOut();
-				$(".container").removeClass("change");
-				$(".container").animate({right:'0'});
-				$(".menu-hide").toggle();
-				window.count++;
-			});
-		});
-	</script><!--hide menu on click of page-->
 	
 </head> 
 
