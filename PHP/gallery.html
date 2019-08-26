@@ -184,7 +184,7 @@
 		$(document).ready(function(){
 			console.log($(window).height());
 			console.log(window.innerHeight);
-			alert($(window).height()-window.innerHeight);
+			alert(Math.max(document.documentElement.clientHeight, window.innerHeight || 0));
 		});
 	</script><!--test-->
 </head>
