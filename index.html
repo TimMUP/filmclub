@@ -37,10 +37,10 @@
 					navState = false;
 					$("#prev").fadeToggle();
 					$("#next").fadeToggle();
+					console.log("click out");
 				}
 				else{
 					//nav is hidden
-					window.disableTimer = false;
 					$(".menu:hidden").fadeIn();
 					$(".gallery-thumbs:hidden").fadeIn();
 					$(".gallery-top").removeClass("idle");
@@ -48,13 +48,16 @@
 					navState = true;
 					$("#prev").fadeToggle();
 					$("#next").fadeToggle();
+					console.log("click in");
+					window.disableTimer = false;
 				}
 			});	
 		});
 	</script><!--nav bar hide and display clicker-->
-	<!--<script type="text/javascript">
+	<script type="text/javascript">
 		var navState = true;
 		var timeout;
+		var onlyClicker = false;
 		var disableTimer = false;
 		$(document).ready(function(){
 			document.onmousemove = function(){
@@ -66,6 +69,7 @@
 					navState = true;
 					$("#prev").fadeIn();
 					$("#next").fadeIn();
+					console.log("time in");
 				}
 				clearTimeout(timeout);
 				timeout = setTimeout(function(){
@@ -77,6 +81,7 @@
 					navState = false;
 					$("#prev").fadeOut();
 					$("#next").fadeOut();
+					console.log("time out");
 					}
 				},5000);
 			};
@@ -118,7 +123,13 @@
 		
 	</script><!--scroll magic-->
 	<script type="text/javascript">
-	  $(document).ready(function () {
+		function slideInit() {
+			var spv = 'auto';
+		  var dir = 'vertical';
+		  if($("#test").css('display')=='none'){
+				spv = 3;
+			  	dir='horizontal';
+			}
 		  $(".swiper-container").css("position","absolute");
 		  //initialize swiper when document ready
 		  var mySwiper = new Swiper ('.gallery-top', {
@@ -126,8 +137,9 @@
 			speed: 400,
 			effect:'coverflow',
       		centeredSlides: true,
-      		slidesPerView: 'auto',
+      		slidesPerView: spv,
 			loop:true,
+			spaceBetween: 100,
 			direction: 'vertical',
 			navigation:{
 				nextEl: '.swiper-button-next',
@@ -159,7 +171,7 @@
       		loopedSlides: 5, //looped slides should be the same
       		watchSlidesVisibility: true,
       		SwatchSlidesProgress: true,
-			direction: 'vertical',
+			direction: dir,
 			mousewheel: true,
     	});
 		  $(".thumb").on("click",function(){
@@ -173,6 +185,9 @@
 		  setTimeout(function(){
 			  mySwiper.autoplay.start();
 		  },4000);
+		}
+	  $(document).ready(function () {
+		  slideInit()
 	  });
 	</script><!--Slides-->
 	<script type="text/javascript">
@@ -258,13 +273,7 @@
 		});
 	</script><!--hide menu on click of page-->
 	
-	<script type="text/javascript">
-		$(document).ready(function(){
-			console.log($(window).height());
-			console.log(window.innerHeight);
-			alert($(window).height()-window.innerHeight);
-		});
-	</script><!--test-->
+
 </head> 
 
 <body>
