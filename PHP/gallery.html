@@ -98,7 +98,7 @@
 		$(document).ready(function(){
 			var background = Math.floor(Math.random()*10);
 			console.log("url(../resources/img/gallery-cover/" + background + ".jpg)center center fixed");
-			$('body').css("background-image","url(../resources/img/gallery-cover/" + background + ".jpg)");
+			$('.bgimg').css("background-image","url(../resources/img/gallery-cover/" + background + ".jpg)");
 		});
 	</script><!--random cover image-->
 	<script type="text/javascript">
@@ -180,7 +180,7 @@
 			});
 		});
 	</script><!--timeline appear-->
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		$(document).ready(function(){
 			console.log($(window).height());
 			console.log(window.innerHeight);
@@ -190,6 +190,7 @@
 </head>
 
 <body>
+	<div class="bgimg"></div>
 	<div class="loading" id="loading-screen">
 		<div class="loading" id="loading-background"></div>
 		<hr class="loading" id="LoadHr1"><br>

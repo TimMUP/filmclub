@@ -148,7 +148,7 @@ li:hover{
 
 @media only screen and (max-device-width: 768px){
 	.menu{
-		height: 5%;
+		height: 5vh;
 	}
 	#nav-logo{
 		height:100%;
