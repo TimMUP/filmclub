@@ -29,8 +29,8 @@
 	</script><!--nav transition after load-->
 	<script type="text/javascript">
 		var count = 0;
-		function myFunction(x) {
-			x.classList.toggle("change");
+		function myFunction() {
+			$(".container").toggleClass("change");
 			$(".nav").fadeToggle();
 			$(".menu-hide").toggle();
 			count++;
@@ -40,7 +40,8 @@
 				$(".container").removeClass("bfchange");
 			}
 			else{
-				if($(window).width()>768){
+				//console.log($(window).width());
+				if($("#test").css('display')!='none'){
 					$(".container").animate({right:'11vw'});
 				}
 				$(".container").removeClass("afchange");
@@ -68,6 +69,14 @@
 			});
 		});
 	</script><!--menu button hover-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".menu-hide").click(function(){
+				console.log("clicked");
+				myFunction();
+			});
+		});
+	</script><!--menu hide from click of page-->
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#formbtn").click(function(){
@@ -107,8 +116,8 @@
 </head>
 
 <body>
-	
 	<div class="menu">
+		<div id="test"></div>
 		<a id="nav-logo" href="index.html">
 			<img id="nav-pic" src="../resources/img/empty-logo.png"> 
 			<h1 id="nav-ttl">WOSS FILM CLUB</h1>
