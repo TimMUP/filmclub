@@ -13,7 +13,7 @@ body{
 	width:100%;
 	background-color: #fff;
 	top:0;
-	background: url(../resources/img/DSC_6753.jpg) no-repeat fixed center center;
+	background: url(../resources/img/contact/background-pc.jpg) no-repeat fixed center center;
 	background-size: cover;
 	z-index: -99999;
 }
@@ -157,4 +157,36 @@ img{
 	text-align: center;
 	font-size: 4em;
 		
+}
+@media only screen and (max-device-width: 768px){
+	.left{
+		width:100%;
+		position:relative;
+		
+	}
+	.right{
+		width:100%;
+		position:relative;
+		
+	}
+	h1{
+		margin-left: 10%;
+		margin-bottom: 10%;
+	}
+	#formbtn{
+		font-size: 1.5em;
+	}
+	.input{
+		padding-bottom: 0.8em;
+	}
+	.input::placeholder{
+		font-size: 1.5em;
+	}
+	#inputName{
+		margin-top: 10%;
+	}
+	.background-image{
+		height:120vh;
+		background: url(../resources/img/contact/background-mb.jpg) no-repeat fixed center center;
+	}
 }
