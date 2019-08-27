@@ -156,4 +156,36 @@ a{
 	.idle{
 		height:100%;
 	}
+.titbr{
+    top: 20vh;
+    right: 5vw;
+}
+.titbl{
+    top: 20vh;
+	left:5vw;
+}
+.tittl{
+	top: 5vh;
+	left:5vw;
+}
+.tittr{
+	top: 5vh;
+	right:5vw;
+}
+.subbr{
+    top: 22.5vh;
+    right: 5vw;
+}
+.subbl{
+    top: 22.5vh;
+	left:5vw;
+}
+.subtl{
+	top: 7.5vh;
+	left:5vw;
+}
+.subtr{
+	top: 7.5vh;
+	right:5vw;
+}
 }
