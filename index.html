@@ -39,8 +39,7 @@
 					navState = false;
 					$("#prev").fadeToggle();
 					$("#next").fadeToggle();
-					console.log("click out");
-					myFunction();
+					//console.log("click out");
 				}
 				else{
 					//nav is hidden
@@ -53,7 +52,7 @@
 					navState = true;
 					$("#prev").fadeToggle();
 					$("#next").fadeToggle();
-					console.log("click in");
+					//console.log("click in");
 					window.disableTimer = false;
 				}
 			});	
@@ -76,7 +75,7 @@
 					navState = true;
 					$("#prev").fadeIn();
 					$("#next").fadeIn();
-					console.log("time in");
+					//console.log("time in");
 					setTimeout(function(){
 						onlyClicker=false;
 					},2000);
@@ -93,7 +92,7 @@
 						navState = false;
 						$("#prev").fadeOut();
 						$("#next").fadeOut();
-						console.log("time out");
+						//console.log("time out");
 						myFunction();
 						onlyClicker=true;
 					}
