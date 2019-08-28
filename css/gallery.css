@@ -199,6 +199,9 @@ html, body{min-height:100%;}
 iframe{
 	display:block;
 }
+.mobile-timeline{
+	display:none;
+}
 
 .ytp-watermark{
 	opacity:0;
@@ -216,6 +219,7 @@ iframe{
 	}
 	.mobile-timeline{
 		padding-top:2vh;
+		display:block;
 	}
 	.timeStamp{
 		margin:0 75vw 2vw 9vw;
@@ -257,7 +261,7 @@ iframe{
 		left:17vw;
 		border:none;
 		border-left: solid rgba(255,255,255,1.00);
-		height:149vw;
+		height:165vw;
 		z-index: -1;
 	}
 }

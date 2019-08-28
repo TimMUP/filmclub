@@ -188,40 +188,6 @@
 			});
 		});
 	</script><!--timeline appear-->
-	<script type="text/javascript">
-		$(document).ready(function(){
-			/*var winTop, thisTop, displace; 
-			var winH = $(window).height();
-			$(window).scroll(function(){
-				winTop = $(window).scrollTop();
-				$(".par").each(function(){
-					thisTop = $(this).offset().top;
-					if(thisTop - winTop < 0){
-						$(this).css("transform","translateY(2vh)");
-					}
-					else if(thisTop - winTop > winH){
-						$(this).css("transform","translateY(-2vh)");
-					}
-					else{
-						displace = (thisTop - winTop) / winH * 2;
-						$(this).css("transform","translateY(" +  displace.toString() + "vh)");
-					}
-				});
-			});*/
-			
-			/*function parallax() {
-				var yPos = 0 - window.pageYOffset/4;
-				$(".pos").each(function(){
-					$(this).style.top = 50 + yPos + "%";
-				});
-			  //alert(yPos);
-			}
-
-			window.addEventListener("scroll", function(){
-				parallax();	
-			});*/
-		});
-	</script><!--parallax effect for mobile-->
 </head>
 
 <body>
@@ -353,6 +319,14 @@
 		</div>
 	</div>
 
+	<script type="text/javascript">
+		if($("#test").css('display')=='none'){
+			$(".timeline").empty();	
+		}
+		else{
+			$(".mobile-timeline").empty();
+		}
+	</script><!--less loading time-->
 	<script type="text/javascript">
 		var playerCount = $(".YTPlayer").length;
 		var currentPlayerCount;
