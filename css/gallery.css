@@ -245,7 +245,7 @@ iframe{
 	.spacer{
 		margin:0 0 2vw -4px;
 		width:2vw;
-		border-top: solid #fff;
+		border-top: solid #fff thick;
 		display: inline-block;
 	}
 	.YTcont{
@@ -254,13 +254,13 @@ iframe{
 		display: inline-block;
 		background:rgba(255,255,255,0.10);
 		margin:0 0 2vw -4px;
-		border-bottom: solid #fff;
+		border-bottom: solid #fff thick;
 	}
 	.mobile-timeline > hr{
 		position:absolute;
 		left:17vw;
 		border:none;
-		border-left: solid rgba(255,255,255,1.00);
+		border-left: solid rgba(255,255,255,1.00) thick;
 		height:165vw;
 		z-index: -1;
 	}
