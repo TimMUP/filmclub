@@ -23,7 +23,7 @@ body{
 	width:50%;
 	left:0;
 	top:0;
-	padding-top:8%;
+	padding-top:7vh;
 }
 h1{
 	font-family: 'product_sans',sans-serif;
@@ -62,7 +62,7 @@ img{
 	width:50%;
 	right:0;
 	top:0;
-	padding-top:8%;
+	padding-top:7vh;
 }
 .input{
 	color:#fff;
@@ -83,7 +83,7 @@ img{
 }
 #inputName {
 	width:60%;
-	margin: 2% 20%;
+	margin: 5% 20% 2%;
 	background: rgba(255,255,255,0.10);
 	border: none;
 	border-bottom: solid #fff;

@@ -188,6 +188,40 @@
 			});
 		});
 	</script><!--timeline appear-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			/*var winTop, thisTop, displace; 
+			var winH = $(window).height();
+			$(window).scroll(function(){
+				winTop = $(window).scrollTop();
+				$(".par").each(function(){
+					thisTop = $(this).offset().top;
+					if(thisTop - winTop < 0){
+						$(this).css("transform","translateY(2vh)");
+					}
+					else if(thisTop - winTop > winH){
+						$(this).css("transform","translateY(-2vh)");
+					}
+					else{
+						displace = (thisTop - winTop) / winH * 2;
+						$(this).css("transform","translateY(" +  displace.toString() + "vh)");
+					}
+				});
+			});*/
+			
+			/*function parallax() {
+				var yPos = 0 - window.pageYOffset/4;
+				$(".pos").each(function(){
+					$(this).style.top = 50 + yPos + "%";
+				});
+			  //alert(yPos);
+			}
+
+			window.addEventListener("scroll", function(){
+				parallax();	
+			});*/
+		});
+	</script><!--parallax effect for mobile-->
 </head>
 
 <body>
@@ -249,7 +283,7 @@
 				<div class="middle"></div>
 				<div class="right-arrow"></div>
 				<div class="right-cont" style="height: 17.5vw">
-				<iframe width="100%" height="100%" class="YTPlayer" id="player2" src="https://www.youtube.com/embed/6UDk1Ur-JSA?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0"  allowfullscreen></iframe>
+					<iframe width="100%" height="100%" class="YTPlayer" id="player2" src="https://www.youtube.com/embed/6UDk1Ur-JSA?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0"  allowfullscreen></iframe>
 				</div>
 			</div>
 			<div class="timeStamp unseen">2019</div>
@@ -279,6 +313,43 @@
 				<div class="right-arrow"></div>
 				<div class="right-cont"></div>
 			</div>-->
+			
+			
+		</div>
+		<div class="mobile-timeline">
+			 <hr>
+			 <div class="timeStamp unseen par">2018</div>
+			 <div class="event unseen par" data-plaeryid = "5">
+				 <div class="timePointer"></div>
+				 <div class="spacer"></div>
+				 <div class="YTcont">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player5" src="https://www.youtube.com/embed/f0iujV_ziGY?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				 </div>
+			 </div>
+			 <div class="event unseen par" data-plaeryid = "6">
+				 <div class="timePointer"></div>
+				 <div class="spacer"></div>
+				 <div class="YTcont">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player6" src="https://www.youtube.com/embed/6UDk1Ur-JSA?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0"  allowfullscreen></iframe>
+				 </div>
+			 </div>
+			 <div class="timeStamp unseen par">2019</div>
+			 <div class="event unseen par" data-plaeryid = "7">
+				 <div class="timePointer"></div>
+				 <div class="spacer"></div>
+				 <div class="YTcont">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player7" src="https://www.youtube.com/embed/sfW_xg_35Eo?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				 </div>
+			 </div>
+			 <div class="event unseen par" data-plaeryid = "8">
+				 <div class="timePointer"></div>
+				 <div class="spacer"></div>
+				 <div class="YTcont">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player8" src="https://www.youtube.com/embed/1ItT0mxOtnk?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				 </div>
+			 </div>
+			 <div class="timeStamp unseen par">NOW</div>
+			 
 		</div>
 	</div>
 

@@ -207,6 +207,61 @@ iframe{
 	opacity:0;
 }
 
+@media only screen and (max-device-width: 768px){
+	.timeline{
+		display:none;
+	}
+	.cover > h1{
+		font-size: 3em;
+	}
+	.mobile-timeline{
+		padding-top:2vh;
+	}
+	.timeStamp{
+		margin:0 75vw 2vw 9vw;
+		font-size: 3em;
+		width:13vw;
+		text-align: center;
+		padding:1.5vw 1.5vw 1vw;
+		display: inline-block;
+	}
+	.event{
+		margin: 2vw -1px;
+		padding-left: 15vw;
+		
+	}
+	.timePointer{
+		width:4vw;
+		height:4vw;
+		background-color:#000;
+		border-radius: 3vw;
+		border: solid #fff;
+		display: inline-block;
+	}
+	.spacer{
+		margin:0 0 2vw -4px;
+		width:2vw;
+		border-top: solid #fff;
+		display: inline-block;
+	}
+	.YTcont{
+		width:56vw;
+		height: 23vw;
+		padding:1vw;
+		display: inline-block;
+		background:rgba(255,255,255,0.10);
+		margin:0 0 2vw -4px;
+		border-bottom: solid #fff;
+	}
+	.mobile-timeline > hr{
+		position:absolute;
+		left:17vw;
+		border:none;
+		border-left: solid rgba(255,255,255,1.00);
+		height:149vw;
+		z-index: -1;
+	}
+}
 /*-------------------------------------------------------------------*/
 
 .intro{
