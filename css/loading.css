@@ -150,4 +150,7 @@
 		font-size: 16vh;
 		line-height: 16vh;
 	}
+	#LoadHr2.loaded{
+	transform: translateY(-33.5vh);
+}
 }
