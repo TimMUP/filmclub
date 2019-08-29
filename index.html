@@ -93,7 +93,9 @@
 						$("#prev").fadeOut();
 						$("#next").fadeOut();
 						//console.log("time out");
-						myFunction();
+						if(window.count%2 != 0){
+							myFunction();
+						}
 						onlyClicker=true;
 					}
 				},5000);
