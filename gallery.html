@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WOSS Film Club</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="resources/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="resources/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="resources/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="resources/img/favicon/site.webmanifest">
+	<link rel="shortcut icon" href="resources/img/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="resources/img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<link href="css/gallery.css" rel="stylesheet" type="text/css">
+	<link href="css/head.css" rel="stylesheet" type="text/css">
+	<link href="css/loading.css" rel="stylesheet" type="text/css">
+	<link href="resources/font-kit/stylesheet.css" rel="stylesheet" type="text/css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log("loaded");
+			$("#nav-pic").css("transition","0.3s");
+			$("#nav-ttl").css("transition","0.3s");
+		});
+	</script><!--nav transition after load-->
+	<script type="text/javascript">
+	if ('scrollRestoration' in history) {
+	  history.scrollRestoration = 'manual';
+	}
+	</script><!--turn off chrome scroll restoration-->
+	<script type="text/javascript">
+		var count = 0;
+		function myFunction() {
+			$(".container").toggleClass("change");
+			$(".nav").fadeToggle();
+			$(".menu-hide").toggle();
+			count++;
+			if(count%2 == 0){
+				$(".container").animate({right:'0'});
+				$(".container").removeClass("afchange");
+				$(".container").removeClass("bfchange");
+			}
+			else{
+				//console.log($(window).width());
+				if($("#test").css('display')!='none'){
+					$(".container").animate({right:'11vw'});
+				}
+				$(".container").removeClass("afchange");
+				$(".container").removeClass("bfchange");
+			}
+		}	
+	</script><!--menu button-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".container").mouseover(function(){
+				if(window.count%2 == 0){//menu is open
+					$(".container").addClass("bfchange");
+				}
+				else{//menu is not open
+					$(".container").addClass("afchange");
+				}
+			});
+			$(".container").mouseleave(function(){
+				if(window.count%2 == 0){//menu is open
+					$(".container").removeClass("bfchange");
+				}
+				else{//menu is not open
+					$(".container").removeClass("afchange");
+				}		  
+			});
+		});
+	</script><!--menu button hover-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".menu-hide").click(function(){
+				console.log("clicked");
+				myFunction();
+			});
+		});
+	</script><!--menu hide from click of page-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			window.onload = function(){
+				setTimeout(function(){
+					$("div#loading-screen > h1").css({"opacity":"1",
+													  "-webkit-animation":"FadeOut 1s ease-in-out 0s forwards",
+													  "-moz-animation":"FadeOut 1s ease-in-out 0s forwards","animation":"FadeOut 1s ease-in-out 0s forwards"});
+					$("div#loading-screen > em").css({"opacity":"1",
+													  "-webkit-animation":" LLGradient 10s ease infinite, FloatIn 1.5s ease-out 0.2s 1 forwards, FadeOut 1s ease-in-out 0.3s forwards",
+													  "-moz-animation":" LLGradient 10s ease infinite, FloatIn 1.5s ease-out 0.2s 1 forwards, FadeOut 1s ease-in-out 0.3s forwards",
+													  "animation":" LLGradient 10s ease infinite, FloatIn 1.5s ease-out 0.2s 1 forwards, FadeOut 1s ease-in-out 0.3s forwards"});
+					$(".loading").addClass("loaded").removeClass("loading");
+					setTimeout(function(){
+						$(".loaded").fadeOut();
+					},2000);
+    			}, 3000);
+				//clearTimeout(timeout);
+							}
+		});
+	</script><!--loading screen-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var background = Math.floor(Math.random()*10);
+			console.log("url(resources/img/gallery-cover/" + background + ".jpg)center center fixed");
+			$('.bgimg').css("background-image","url(resources/img/gallery-cover/" + background + ".jpg)");
+		});
+	</script><!--random cover image-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// Add smooth scrolling to all links
+		  $(".arrow-cont").on('click', function(event) {
+/*
+			// Make sure this.hash has a value before overriding default behavior
+			if (this.hash !== "") {
+			  // Prevent default anchor click behavior
+			  event.preventDefault();
+
+			  // Store hash
+			  var hash = this.hash;
+
+			  // Using jQuery's animate() method to add smooth page scroll
+			  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area*/
+			  $('html, body').animate({
+				scrollTop: $(window).height()//$(".cover h1").offset().top
+			  }, 800//, function(){
+
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				//window.location.hash = hash;
+			 //}
+									 );
+			//} // End if
+		  });
+		});
+	</script><!--cover scroll to content-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(window).scroll(function(){
+				if($(window).scrollTop() > $(window).height()*.95){
+					$("#nav-logo h1").css("opacity","0");
+				}
+				else{
+					$("#nav-logo h1").css("opacity","1");
+				}
+			});
+		});
+	</script><!--nav hide-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".event").each(function(){
+				var marginl = $(this).find(".left-cont").height()/2;//-$( window ).width()/100;
+				var marginr = $(this).find(".right-cont").height()/2;//-$( window ).width()/100;
+				var margin = marginl + marginr;
+				//var margin2 = $(this).find(".left-cont").height()/2-$( window ).width()/200;
+				$(this).find(".middle").css("margin-bottom", margin.toString()+"px");
+				$(this).find(".left-arrow").css("margin-bottom", margin.toString()+"px");
+				$(this).find(".right-arrow").css("margin-bottom", margin.toString()+"px");	
+			});
+			$(window).resize(function(){
+				$(".event").each(function(){
+				var marginl = $(this).find(".left-cont").height()/2;//-$( window ).width()/100;
+				var marginr = $(this).find(".right-cont").height()/2;//-$( window ).width()/100;
+				var margin = marginl + marginr;
+				//var margin2 = $(this).find(".left-cont").height()/2-$( window ).width()/200;
+				$(this).find(".middle").css("margin-bottom", margin.toString()+"px");
+				$(this).find(".left-arrow").css("margin-bottom", margin.toString()+"px");
+				$(this).find(".right-arrow").css("margin-bottom", margin.toString()+"px");		
+				});
+			});
+		});	
+	</script><!--add margin for timeline-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//console.log("loaded");
+			$(window).scroll(function(){
+				//console.log("scroll");
+				//console.log($(".unseen").offset().top);
+				//console.log($(window).scrollTop());
+				//console.log($(window).height());
+				if($(".unseen").offset().top-$(window).scrollTop() < 0.9*$(window).height()){
+					//console.log("seen");
+					$(".unseen").first().removeClass("unseen").addClass("seen");
+				}
+				
+			});
+		});
+	</script><!--timeline appear-->
+</head>
+
+<body>
+	<div class="bgimg"></div>
+	<div class="loading" id="loading-screen">
+		<div class="loading" id="loading-background"></div>
+		<hr class="loading" id="LoadHr1"><br>
+		<em class="loading">FILM</em><br>
+		<h1 class="loading">CLUB</h1><br>
+		<hr class="loading" id="LoadHr2">
+	</div>
+	<div class="menu">
+		<div id="test"></div>
+		<a id="nav-logo" href="index.html">
+			<img id="nav-pic" src="resources/img/empty-logo.png"> 
+			<h1 id="nav-ttl">WOSS FILM CLUB</h1>
+		</a>
+		<div id = "barcontcont"></div>
+			<div class="container" onClick="myFunction()">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+		
+		<ul class="nav">
+			<a href="index.html"><li>Home</li></a>
+            <a href="gallery.html"><li>Timeline</li></a>
+            <a target="_blank" href="signup.html"><li>SignUp</li></a>
+            <a href="contact.html"><li>Contact</li></a>
+			
+		</ul>
+	</div>
+	<div class="menu-hide"></div>
+	<div class="cover-text">
+		<h1>WOSS FILM CLUB</h1>
+		<h2>OUR JOURNEY</h2>
+		<div class="arrow-cont">
+			<div class="arrow"><div class="arrow-shape"></div></div><br>
+			<div class="arrow"><div class="arrow-shape"></div></div>
+		</div>
+	</div>
+	
+	<div class="cover">
+		<h1>TIMELINE</h1>
+		<div class="timeline">
+			<div class="timeStamp unseen" style="margin-top: 0">2018</div>
+			<div class="event unseen" data-playerid = "1">
+				<div class="left-cont" style="height: 17.5vw">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player1" src="https://www.youtube.com/embed/f0iujV_ziGY?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="left-arrow"></div>
+				<div class="middle"></div>
+				<div class="right-arrow useless"></div>
+				<div class="right-cont useless"></div>
+			</div>
+			<div class="event unseen" data-playerid = "2">
+				<div class="left-cont useless"></div>
+				<div class="left-arrow useless"></div>
+				<div class="middle"></div>
+				<div class="right-arrow"></div>
+				<div class="right-cont" style="height: 17.5vw">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player2" src="https://www.youtube.com/embed/6UDk1Ur-JSA?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0"  allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="timeStamp unseen">2019</div>
+			<div class="event unseen" data-playerid = "3">
+				<div class="left-cont" style="height: 17.5vw">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player3" src="https://www.youtube.com/embed/sfW_xg_35Eo?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="left-arrow"></div>
+				<div class="middle"></div>
+				<div class="right-arrow useless"></div>
+				<div class="right-cont useless"></div>
+			</div>
+			<div class="event unseen" data-playerid = "4">
+				<div class="left-cont useless"></div>
+				<div class="left-arrow useless "></div>
+				<div class="middle"></div>
+				<div class="right-arrow"></div>
+				<div class="right-cont" style="height: 17.5vw">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player4" src="https://www.youtube.com/embed/1ItT0mxOtnk?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="timeStamp unseen" style="margin-bottom: -5vh">NOW</div>
+			<!--<div class="event unseen">
+				<div class="left-cont"></div>
+				<div class="left-arrow"></div>
+				<div class="middle"></div>
+				<div class="right-arrow"></div>
+				<div class="right-cont"></div>
+			</div>-->
+			
+			
+		</div>
+		<div class="mobile-timeline">
+			 <hr>
+			 <div class="timeStamp unseen par">2018</div>
+			 <div class="event unseen par" data-plaeryid = "5">
+				 <div class="timePointer"></div>
+				 <div class="spacer"></div>
+				 <div class="YTcont">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player5" src="https://www.youtube.com/embed/f0iujV_ziGY?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				 </div>
+			 </div>
+			 <div class="event unseen par" data-plaeryid = "6">
+				 <div class="timePointer"></div>
+				 <div class="spacer"></div>
+				 <div class="YTcont">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player6" src="https://www.youtube.com/embed/6UDk1Ur-JSA?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0"  allowfullscreen></iframe>
+				 </div>
+			 </div>
+			 <div class="timeStamp unseen par">2019</div>
+			 <div class="event unseen par" data-plaeryid = "7">
+				 <div class="timePointer"></div>
+				 <div class="spacer"></div>
+				 <div class="YTcont">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player7" src="https://www.youtube.com/embed/sfW_xg_35Eo?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				 </div>
+			 </div>
+			 <div class="event unseen par" data-plaeryid = "8">
+				 <div class="timePointer"></div>
+				 <div class="spacer"></div>
+				 <div class="YTcont">
+					<iframe width="100%" height="100%" class="YTPlayer" id="player8" src="https://www.youtube.com/embed/1ItT0mxOtnk?cc_load_policy=1&controls=0&disablekb=1&modestbranding=1&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+				 </div>
+			 </div>
+			 <div class="timeStamp unseen par">NOW</div>
+			 
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		if($("#test").css('display')=='none'){
+			$(".timeline").empty();	
+		}
+		else{
+			$(".mobile-timeline").empty();
+		}
+	</script><!--less loading time-->
+	<script type="text/javascript">
+		var playerCount = $(".YTPlayer").length;
+		var currentPlayerCount;
+		//console.log(playerCount);
+		var player = [];
+		function onPlayerReady(event) {
+        	console.log(player[1].getPlayerState());
+      	}
+		function onPlayerStateChange(event) {
+			console.log("state changed");
+        	//console.log(player[1].getPlayerState());
+		}
+		for(i = 1; i <= playerCount; i++){
+			currentPlayerCount = i;
+			var tag = document.createElement('script');
+			tag.id = 'player' + currentPlayerCount.toString();
+			tag.src = 'https://www.youtube.com/iframe_api';
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+			function onYouTubeIframeAPIReady() {
+				console.log("api ready");
+				//console.log(currentPlayerCount);
+				player[currentPlayerCount] = new YT.Player('player' + currentPlayerCount.toString(), {
+					/*videoId: 'f0iujV_ziGY',
+					controls: 0,
+					disablekb: 1,
+					enablejsapi: 1,
+					loop: 1,
+					modestbranding: 1,
+					cc_load_policy: 1,*/
+					events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+					}
+				});
+			}
+		}
+		
+		/*$(window).scroll(function(){
+			console.log(player[1].getPlayerState());
+			var sTop = $(window).scrollTop();
+			var h1 = sTop + $(window).height()*0.05;
+			var h2 = sTop + $(window).height();
+			$(".event").each(function(){
+				var sThis = $(this).offset().top;
+				if( sThis < h1 || sThis > h2-$(this).height()){
+					//outside viewport
+					console.log(player[1].getPlayerState());
+					player[$(this).data("playerid")].pauseVideo();
+				}
+			});
+		});*/
+</script>
+</body>
+</html>
