@@ -33,6 +33,7 @@
     left: 3vw;
 	transform: scale(1, 1);
 	opacity:1;
+	width:auto;
 }
 #nav-logo > h1:hover{
 	transform: scale(1.05, 1.05);
