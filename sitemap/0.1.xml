@@ -4,7 +4,7 @@
 ?>
 
 
-<urlset xmlns="https://www.sitemaps.org/shemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://wossfilm.com</loc>
 		<lastmod>2019-09-10</lastmod>
