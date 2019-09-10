@@ -115,10 +115,10 @@
 		$(document).ready(function(){
 			window.onload = function(){
 				setTimeout(function(){
-					$("div#loading-screen > h1").css({"opacity":"1",
+					$("#loading-h1").css({"opacity":"1",
 													  "-webkit-animation":"FadeOut 1s ease-in-out 0s forwards",
 													  "-moz-animation":"FadeOut 1s ease-in-out 0s forwards","animation":"FadeOut 1s ease-in-out 0s forwards"});
-					$("div#loading-screen > em").css({"opacity":"1",
+					$("#loading-em").css({"opacity":"1",
 													  "-webkit-animation":" LLGradient 10s ease infinite, FloatIn 1.5s ease-out 0.2s 1 forwards, FadeOut 1s ease-in-out 0.3s forwards",
 													  "-moz-animation":" LLGradient 10s ease infinite, FloatIn 1.5s ease-out 0.2s 1 forwards, FadeOut 1s ease-in-out 0.3s forwards",
 													  "animation":" LLGradient 10s ease infinite, FloatIn 1.5s ease-out 0.2s 1 forwards, FadeOut 1s ease-in-out 0.3s forwards"});
@@ -300,13 +300,13 @@
 </head> 
 
 <body>
+	<h1 style="opacity:0; height:0" >WOSS</h1>
+	<h1 style="opacity:0; height:0" >White Oaks Secondary School</h1>
 	<div class="loading" id="loading-screen">
 		<div class="loading" id="loading-background"></div>
 		<hr class="loading" id="LoadHr1"><br>
-		<em class="loading">FILM</em><br>
-		<h1 class="loading">CLUB</h1><br>
-		<h1 style="opacity:0; height:0" >WOSS</h1>
-		<h1 style="opacity:0; height:0" >White Oaks Secondary School</h1>
+		<em id="loading-em" class="loading">FILM</em><br>
+		<h1 id="loading-h1" class="loading">CLUB</h1><br>
 		<hr class="loading" id="LoadHr2">
 	</div>
 	<div class="menu">
